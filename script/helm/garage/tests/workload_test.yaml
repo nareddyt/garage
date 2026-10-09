@@ -212,3 +212,14 @@ tests:
       - equal:
           path: spec.template.spec.serviceAccountName
           value: default
+
+  - it: sets deployment annotations when configured
+    template: templates/workload.yaml
+    set:
+      deployment.annotations:
+        reloader.stakater.com/search: "true"
+    asserts:
+      - equal:
+          path: metadata.annotations["reloader.stakater.com/search"]
+          value: "true"
+

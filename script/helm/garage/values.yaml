@@ -102,6 +102,8 @@ deployment:
   replicaCount: 3
   # -- If using statefulset, allow Parallel or OrderedReady (default)
   podManagementPolicy: OrderedReady
+  # -- Additional annotations to add to the workload (StatefulSet or DaemonSet)
+  annotations: {}
 
 image:
   # -- default to amd64 docker image
